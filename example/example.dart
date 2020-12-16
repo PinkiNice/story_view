@@ -158,21 +158,23 @@ class _MoreStoriesState extends State<MoreStories> {
               padding: const EdgeInsets.all(68.0),
               child: Container(child: Text("Action bar test")),
             ),
-            actionBar: Align(
-              alignment: Alignment.bottomCenter,
-              child: ElevatedButton(
-                child: Text("Show license page"),
-                onPressed: () {
-                  showModalBottomSheet(
-                    context: context,
-                    builder: (context) {
-                      return Container(
-                          height: 1200, child: Center(child: Text("Hello")));
-                    },
-                  );
-                },
-              ),
-            ),
+            tappables: [
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: ElevatedButton(
+                  child: Text("Show license page"),
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return Container(
+                            height: 1200, child: Center(child: Text("Hello")));
+                      },
+                    );
+                  },
+                ),
+              )
+            ],
             duration: Duration(seconds: 10),
           ),
           StoryItem.text(
