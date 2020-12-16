@@ -153,10 +153,31 @@ class _MoreStoriesState extends State<MoreStories> {
       ),
       body: StoryView(
         storyItems: [
+          StoryItem(
+            Padding(
+              padding: const EdgeInsets.all(68.0),
+              child: Container(child: Text("Action bar test")),
+            ),
+            actionBar: Align(
+              alignment: Alignment.bottomCenter,
+              child: ElevatedButton(
+                child: Text("Show license page"),
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                          height: 1200, child: Center(child: Text("Hello")));
+                    },
+                  );
+                },
+              ),
+            ),
+            duration: Duration(seconds: 10),
+          ),
           StoryItem.text(
             title: "I guess you'd love to see more of our food. That's great.",
             backgroundColor: Colors.blue,
-            
           ),
           StoryItem.text(
             title: "Nice!\n\nTap to continue.",

@@ -34,11 +34,13 @@ class StoryItem {
 
   /// The page content
   final Widget view;
+  final Widget actionBar;
 
   StoryItem(
     this.view, {
     this.duration,
     this.shown = false,
+    this.actionBar,
   }) : assert(duration != null, "[duration] should not be null");
 
   /// Short hand to create text-only page.
@@ -703,6 +705,7 @@ class StoryViewState extends State<StoryView> with TickerProviderStateMixin {
                 }),
                 width: 70),
           ),
+          if (_currentStory.actionBar != null) _currentStory.actionBar,
         ],
       ),
     );
